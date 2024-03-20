@@ -60,7 +60,7 @@
             </li>
 
             <li id="left">
-                <a href = "https://m5rdev.github.io/MuslimEncolopedia/"><img src="./image/logo.png" id="logo"></a>
+               <img src="./image/logo.png" id="logo"></a>
             </li>
         </ul>
     </header>
@@ -513,8 +513,7 @@
                 <h3>
                     (Offline version)
                 </h3>
-
-                <a href = "https://download2274.mediafire.com/htwjtnnmjcigH5O-E_jQ-rhDCK5Ml6T3OgZ3A6Rb4Ymn058EaATDauiLEXM-SMgJ_g12Q7ZVmcRoZea1w8aHdQkw_sl6rfo0P_P4gUYaLkVpLeVdx6EegMdEwSgPVtySW8ndCV8xO2dhqiA4aEQYjBvnOtsIgBKXY7P5RjeislzaBr0/orhjvbyzbpb3sap/Muslim+Encolopedia.rar">
+                <a id="offline-download">
                 <img src="image/download.png" width="50">
                 </a>
 
@@ -526,9 +525,17 @@
                     (Online version)
                 </h3>
 
-                <a href = "https://download1474.mediafire.com/uu5acn1g97ogO-v9OuGYM01lJiv-VWG8gtpSVKA7gYzrKhKygdD6GS93dpIRIZEHLOfwYqkwrUvgH5hA5RQE7D1ISUoZYc1I3XfXiQC1LIxJv8XU8KcEKk9bhWMFNK-Vy92w4gM-dOUCLMZXJ-R3szin3c5EKv9l7bskbC-6OOrGR1Q/d8pk428lzfalgxa/Muslim+Encolopedia+Lite.exe">
+                <a id="online-download">
                 <img src="image/download.png" width="50">
                 </a>
+
+            </li>
+            <li>
+                <span id="offlineCountShower"></span>
+
+            </li>
+            <li>
+                <span id="onlineCountShower"></span>
 
             </li>
         </ul>
@@ -540,9 +547,14 @@
     <footer id="footer">
 
         <p id="Copyright">
-            <a>
-                ©2024 M5R DEV
-            </a>
+            <span>
+               made by <a target="_blank" href="https://www.instagram.com/m5rdev/">M5rdev</a> and <a target='_blank' href="https://www.instagram.com/z4dev/">z4dev</a> all rights reserved 2024
+            </span>
+            <style>
+                a {
+                    text-decoration: none;
+                }
+            </style>
         </p>
 
     </footer>
