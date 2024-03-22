@@ -15,8 +15,8 @@ let onlineCountURL = `${baseURL}/downloads/online/count`;
 let offlineCountURL = `${baseURL}/downloads/offline/count`;
 
 // URLs for downloads
-let offlineURL = "https://download2274.mediafire.com/htwjtnnmjcigH5O-E_jQ-rhDCK5Ml6T3OgZ3A6Rb4Ymn058EaATDauiLEXM-SMgJ_g12Q7ZVmcRoZea1w8aHdQkw_sl6rfo0P_P4gUYaLkVpLeVdx6EegMdEwSgPVtySW8ndCV8xO2dhqiA4aEQYjBvnOtsIgBKXY7P5RjeislzaBr0/orhjvbyzbpb3sap/Muslim+Encolopedia.rar";
-let onlineURL = "https://download1320.mediafire.com/1cp55iga5jqgETbl24gGVyP_HKWN5M-3IrgnhPOfmm3P-dxhnfVzsX0kzP2wr3RDTR4obu7KPSOqDCA8fOBowmX5_waXJ-H4Nx63bLndT7PZp8gKgiBrPTLFwMoDH2Km2i4hEaXWnZnsc5-EXkSx3hkePOWVgELcBBiY2MRXLeIBvYI/d8pk428lzfalgxa/Muslim+Encolopedia+Lite.exe";
+let offlineURL = "https://download2271.mediafire.com/r01nurbmvhdgYUriI0vRqjAWCL-J0U9QiQgB0rcWao09Ex_60b_vIc6rWiQoeoTYl7Ogc6fkUTpQySW-YG-6eXSq-sZLwdHk7YSU_kNfKYVNHj02jL9WbUYAdI1iTOgRTwB8ejQLHD6Zs-rPDtZ7YCR6gcEWNxPWosWOTbOkmgAPq5g/orhjvbyzbpb3sap/Muslim+Encolopedia.rar";
+let onlineURL = "https://download2268.mediafire.com/eytv14o6zyzgJ4rFZ8mYgJVpc2iz03_-KdR9jfYTHkX57HThxPD-Hs6IKfOJ5ccle0EsMgdjsuSIorZZwn-Eutt_vvZmZ9dBEu817GPFPcyAqk6bYIJxLOCEV9HVUASjG91VrciPXTB1UjsiALu3QN5wW1DiUdidFpCpm-wYd81k-ac/d8pk428lzfalgxa/Muslim+Encolopedia+Lite.exe";
 
 // Default counters values
 let onlineCount = 41;
