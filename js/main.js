@@ -16,7 +16,7 @@ let offlineCountURL = `${baseURL}/downloads/offline/count`;
 
 // URLs for downloads
 let offlineURL = "https://download2271.mediafire.com/r01nurbmvhdgYUriI0vRqjAWCL-J0U9QiQgB0rcWao09Ex_60b_vIc6rWiQoeoTYl7Ogc6fkUTpQySW-YG-6eXSq-sZLwdHk7YSU_kNfKYVNHj02jL9WbUYAdI1iTOgRTwB8ejQLHD6Zs-rPDtZ7YCR6gcEWNxPWosWOTbOkmgAPq5g/orhjvbyzbpb3sap/Muslim+Encolopedia.rar";
-let onlineURL = "https://download2268.mediafire.com/eytv14o6zyzgJ4rFZ8mYgJVpc2iz03_-KdR9jfYTHkX57HThxPD-Hs6IKfOJ5ccle0EsMgdjsuSIorZZwn-Eutt_vvZmZ9dBEu817GPFPcyAqk6bYIJxLOCEV9HVUASjG91VrciPXTB1UjsiALu3QN5wW1DiUdidFpCpm-wYd81k-ac/d8pk428lzfalgxa/Muslim+Encolopedia+Lite.exe";
+let onlineURL = "https://drive.usercontent.google.com/download?id=1Lu6WgVYzYUvpnBhR4m6oywKAjfQds1PD&export=download&authuser=0&confirm=t&uuid=b202c5f7-2b3c-4814-a805-6d34e7f3cce0&at=APZUnTW4jT90bUxuhUYd_RA8t6RA%3A1713560888145";
 
 // Default counters values
 let onlineCount = 41;
