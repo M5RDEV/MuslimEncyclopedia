@@ -286,8 +286,9 @@ img {
     color: #B2A59B;
 }
 
-#download_ul li a + span {
-    margin-left: 10px; /* تعديل المسافة هنا */
+#download_ul a {
+    display: block;
+    margin-bottom: 10px; /* المسافة بين العناصر <a> و <span> */
 }
 
 /* Store */
