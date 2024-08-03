@@ -5,7 +5,7 @@ let offlineDownload = document.getElementById("offline-download");
 
 onlineDownload.style.cursor = "pointer";
 offlineDownload.style.cursor = "pointer";
-fullofflineDownload.style.cursor = "pointer";
+//fullofflineDownload.style.cursor = "pointer";
 
 // API base URL
 const baseURL = "https://counting-api.onrender.com";
@@ -19,14 +19,14 @@ let offlineCountURL = `${baseURL}/downloads/offline/count`;
 //let fullofflineCountURL = `${baseURL}/downloads/fulloffline/count`;
 
 // URLs for downloads
-let fullofflineURL = "https://www.mediafire.com/file/0rke8fnuc712goq/MuslimEncyclopedia_6_Reader.rar/file";
+//let fullofflineURL = "";
 let offlineURL = "https://download2271.mediafire.com/r01nurbmvhdgYUriI0vRqjAWCL-J0U9QiQgB0rcWao09Ex_60b_vIc6rWiQoeoTYl7Ogc6fkUTpQySW-YG-6eXSq-sZLwdHk7YSU_kNfKYVNHj02jL9WbUYAdI1iTOgRTwB8ejQLHD6Zs-rPDtZ7YCR6gcEWNxPWosWOTbOkmgAPq5g/orhjvbyzbpb3sap/Muslim+Encolopedia.rar";
 let onlineURL = "https://download1323.mediafire.com/seubp20s9osgzmWfSz9SZiGjENPIL-D9XuG9oC3nosymiQKR2tfAje4_d99UqQdl5r7uIVo6dbgQoBu3k9vM53kfA9xU44oeW9qyQA4W_J8Ve2AKASRKkj3kx5BHi-q4yyRZwNgNahmngQCJwpemMdNU4v8OdyrbA-uindqh0lIb3w/d8pk428lzfalgxa/Muslim+Encolopedia+Lite.exe";
 
 // Default counters values
 let onlineCount = 41;
 let offlineCount = 40;
-let fullofflineCount = 4;
+//let fullofflineCount = 4;
 
 // Counters showers
 let onlineCountShower = document.getElementById("onlineCountShower");
