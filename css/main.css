@@ -127,12 +127,12 @@ img {
 }
 
 #info_text h1 {
-
     text-align: right;
     margin: 0;
     background: #ffffff;
     background: linear-gradient(to right, #ffffff 40%, #ffffff 74%);
-    -webkit-background-clip: text;
+    background-clip: text; /* خاصية قياسية */
+    -webkit-background-clip: text; /* خاصية خاصة بـ WebKit */
     -webkit-text-fill-color: transparent;
     font-size: 35px;
 }
@@ -286,9 +286,11 @@ img {
     color: #B2A59B;
 }
 
+#download_ul li a + span {
+    margin-left: 10px; /* تعديل المسافة هنا */
+}
 
 /* Store */
-
 
 #down_store {
     display: flex;
@@ -310,7 +312,6 @@ img {
 #down_store li img {
     width: 200px;
 }
-
 
 /* review */
 
@@ -336,11 +337,7 @@ img {
     max-width: 100%;
 }
 
-
-
-
 /* footer */
-
 
 #footer {
     margin-top: 100px;
