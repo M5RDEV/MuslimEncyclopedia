@@ -15,8 +15,8 @@ let onlineCountURL = `${baseURL}/downloads/online/count`;
 let offlineCountURL = `${baseURL}/downloads/offline/count`;
 
 // URLs for downloads
-let offlineURL = "https://download1511.mediafire.com/0i8re5s1sthg7QoaT3KGsEjZumYH3uq7nr2R47Crj3RY34VaMj0D3nRRGPlP6ZLVNdCl2AEJcwra9tN6QiUmdqAVVJmsad8MlN11qmtcmHCo24wpZRMqxvNJ5QHBjNdgCEJnlRf5RLmJw6NA6Z2ANPMyA36-PUqdRo93uzNruo-48Q5E/orhjvbyzbpb3sap/MuslimEncyclopedia.rar";
-let onlineURL = "https://download1528.mediafire.com/8qe7v62ffp9gXZWjexpgETroBLiH6L9_PV2W_sCu2TCNuAwt7ps16dAYHtnLp9KXBclUVDTRtNUp8sI9E0OzcijF_qwAW_FG3svs8Rc5b2POmXTpRVmUEc5g-H9WO1SbhzrXK7HAnmXnQJaCR_ob5q7XHroR8A_A4NV9ul9YdHtZ_Nit/d8pk428lzfalgxa/Muslim+Encyclopedia+Lite.exe";
+let offlineURL = "https://www.mediafire.com/file/orhjvbyzbpb3sap/MuslimEncyclopedia.rar/file";
+let onlineURL = "https://www.mediafire.com/file/d8pk428lzfalgxa/Muslim_Encyclopedia_Lite.exe/file";
 
 // Default counters values
 let onlineCount = 41;
