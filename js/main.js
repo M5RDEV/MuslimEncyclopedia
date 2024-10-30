@@ -16,7 +16,7 @@ let offlineCountURL = `${baseURL}/downloads/offline/count`;
 
 // URLs for downloads
 let offlineURL = "https://www.mediafire.com/file/orhjvbyzbpb3sap/MuslimEncyclopedia.rar/file";
-let onlineURL = "https://www.mediafire.com/file/d8pk428lzfalgxa/Muslim_Encyclopedia_Lite.exe/file";
+let onlineURL = "https://www.mediafire.com/file/4fepk1fo2qjts8t/MuslimEncyclopedia+Lite.rar/file";
 
 // Default counters values
 let onlineCount = 41;
