@@ -14,7 +14,7 @@
 html,
 body {
     margin: 0 0 0 0;
-    background-color: #503c3c;
+    background-color: #191825;
     color: #1b1b1f;
     direction: rtl;
     font-family: "Al_Jazeera";
@@ -26,8 +26,8 @@ img {
 
 
 #header {
-    background-color: #ffffffab;
-    backdrop-filter: blur(20px);
+    background-color: #eeeeee;
+    backdrop-filter: blur(10px);
     height: 70px;
     width: 100%;
     position: fixed;
@@ -88,11 +88,11 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #000000;
+    background: #33304b;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #000000ce;
+    background: #484668;
 }
 
 
@@ -140,7 +140,7 @@ img {
 #info_text p {
     overflow-wrap: break-word;
     text-align: justify;
-    color: #B2A59B;
+    color: #0080fe;
 }
 
 #but {
@@ -153,7 +153,7 @@ img {
 #but button {
     width: 150px;
     padding: 10px;
-    border: 2px solid #5F6F52;
+    border: 2px solid #9B7EBD;
     border-radius: 7px;
     font-family: "Al_Jazeera";
     font-size: 15px;
@@ -162,15 +162,16 @@ img {
 }
 
 #download {
-    background-color: #5F6F52;
+    background-color: #9B7EBD;
     color: #ffffff;
     transition: 0.5s ease-in-out;
 }
 
 #download:hover {
-    background-color: #88967d;
-    border: 2px solid #5F6F52;
+    background-color: #af96cc;
+    border: 2px solid #9B7EBD;
     transition: 0.5s ease-in-out;
+    color: #000000;
 }
 
 #features {
@@ -180,9 +181,9 @@ img {
 }
 
 #features:hover {
-    background-color: #68775c;
-    color: #ffffff;
+    background-color: #af96cc;
     transition: 0.5s ease-in-out;
+    color: #000000;
 }
 
 /* features */
@@ -352,16 +353,6 @@ img {
     margin: 0;
     direction: ltr;
 }
-
-#alsarmad {
-    text-decoration: none;
-    font-weight: 600;
-    color: #467D4D;
-}
-
-
-
-/* SCREENSHOT  */
 
 .screenshot {
     display: flex;
