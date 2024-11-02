@@ -48,7 +48,7 @@ let onlineCountShower = document.getElementById("onlineCountShower");
 axios.get(fullofflineCountURL)
     .then((response) => {
         fullofflineCount = response.data.count;
-        fullofflineCountShower.innerHTML = `عدد التحميلات: ${fullofflineCount}`;
+        fullofflineCountShower.innerHTML = `/n عدد التحميلات: ${fullofflineCount}`;
     })
     .catch((error) => {
         console.warn("Full offline download count endpoint not available. Using default count:", fullofflineCount);
