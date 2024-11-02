@@ -20,37 +20,18 @@ let fullofflineCountURL = `${baseURL}/downloads/fulloffline/count`;
 
 // URLs for downloads
 let offlineURL = "https://www.mediafire.com/file/orhjvbyzbpb3sap/MuslimEncyclopedia.rar/file";
-let fullofflineURL = "https://www.mediafire.com/file/5wfpj29uq0ru15a/MuslimEncyclopedia_6_Reader.rar/file";
+let fullofflineURL = "https://www.mediafire.com/file/z2pz1dq1ywo5sb7/MuslimEncyclopedia.rar/file";
 let onlineURL = "https://www.mediafire.com/file/d8pk428lzfalgxa/Muslim_Encyclopedia_Lite.exe/file";
 
 // Default counters values
 let onlineCount = 41;
 let offlineCount = 40;
-let fullofflineCount = 40;
+let fullofflineCount = 15;
 
 // Counters showers
 let onlineCountShower = document.getElementById("onlineCountShower");
 let offlineCountShower = document.getElementById("offlineCountShower");
 let fullofflineCountShower = document.getElementById("fullofflineCountShower");
-
-// Create elements if they don't exist
-if (!onlineCountShower) {
-    onlineCountShower = document.createElement("div");
-    onlineCountShower.id = "onlineCountShower";
-    document.body.appendChild(onlineCountShower); // Add it to the body or a specific container
-}
-
-if (!offlineCountShower) {
-    offlineCountShower = document.createElement("div");
-    offlineCountShower.id = "offlineCountShower";
-    document.body.appendChild(offlineCountShower);
-}
-
-if (!fullofflineCountShower) {
-    fullofflineCountShower = document.createElement("div");
-    fullofflineCountShower.id = "fullofflineCountShower";
-    document.body.appendChild(fullofflineCountShower);
-}
 
 // Fetch initial download counts using Axios GET requests
 axios.get(onlineCountURL)
@@ -67,12 +48,16 @@ axios.get(offlineCountURL)
     })
     .catch((error) => console.error("Error fetching offline download count:", error));
 
+// Check if fullofflineCountURL is available and update count if possible
 axios.get(fullofflineCountURL)
     .then((response) => {
         fullofflineCount = response.data.count;
         fullofflineCountShower.innerHTML = `عدد التحميلات: ${fullofflineCount}`;
     })
-    .catch((error) => console.error("Error fetching full offline download count:", error));
+    .catch((error) => {
+        console.warn("Full offline download count endpoint not available. Using default count:", fullofflineCount);
+        fullofflineCountShower.innerHTML = `عدد التحميلات: ${fullofflineCount}`;
+    });
 
 // Handle online download click
 onlineDownload.addEventListener("click", () => {
