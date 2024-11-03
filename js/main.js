@@ -3,7 +3,7 @@ const baseURL = "https://counting-api.onrender.com";
 
 
 // buttons
-//let fullofflineDownload = document.getElementById("full-offline-download");
+let fullofflineDownload = document.getElementById("full-offline-download");
 let offlineDownload = document.getElementById("offline-download");
 let onlineDownload = document.getElementById("online-download");
 
@@ -38,7 +38,7 @@ let onlineCount = 41;
 
 
 // Counters showers
-//let fullofflineCountShower = document.getElementById("fullofflineCountShower");
+let fullofflineCountShower = document.getElementById("fullofflineCountShower");
 let offlineCountShower = document.getElementById("offlineCountShower");
 let onlineCountShower = document.getElementById("onlineCountShower");
 
