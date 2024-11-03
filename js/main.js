@@ -33,14 +33,14 @@ let fullofflineCountShower = document.getElementById("fullofflineCountShower");
 let offlineCountShower = document.getElementById("offlineCountShower");
 let onlineCountShower = document.getElementById("onlineCountShower");
 
-// Display the initial count for full offline download
-fullofflineCountShower.innerHTML = `عدد التحميلات: ${fullofflineCount}`;
-
 // Fetch initial download counts using Axios GET requests
 axios.get(offlineCountURL)
     .then((response) => {
         offlineCount = response.data.count;
         offlineCountShower.innerHTML = `عدد التحميلات: ${offlineCount}`;
+
+        // Display the initial count for full offline download
+        fullofflineCountShower.innerHTML = `عدد التحميلات: ${fullofflineCount}`;
     })
     .catch((error) => console.error("Error fetching offline download count:", error));
 
