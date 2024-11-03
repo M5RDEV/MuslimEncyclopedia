@@ -1,65 +1,46 @@
 // API base URL
 const baseURL = "https://counting-api.onrender.com";
 
-
-// buttons
+// Buttons
 let fullofflineDownload = document.getElementById("full-offline-download");
 let offlineDownload = document.getElementById("offline-download");
 let onlineDownload = document.getElementById("online-download");
-
 
 offlineDownload.style.cursor = "pointer";
 fullofflineDownload.style.cursor = "pointer";
 onlineDownload.style.cursor = "pointer";
 
-
 // API endpoints
-//let fullofflineIncrementURL = `${baseURL}/downloads/fulloffline/increment`;
 let offlineIncrementURL = `${baseURL}/downloads/offline/increment`;
 let onlineIncrementURL = `${baseURL}/downloads/online/increment`;
 
-
-// Count Url
-//let fullofflineCountURL = `${baseURL}/downloads/fulloffline/count`;
+// Count URLs
 let offlineCountURL = `${baseURL}/downloads/offline/count`;
 let onlineCountURL = `${baseURL}/downloads/online/count`;
-
 
 // URLs for downloads
 let fullofflineURL = "https://www.mediafire.com/file/z2pz1dq1ywo5sb7/MuslimEncyclopedia.rar/file";
 let offlineURL = "https://www.mediafire.com/file/orhjvbyzbpb3sap/MuslimEncyclopedia.rar/file";
 let onlineURL = "https://www.mediafire.com/file/d8pk428lzfalgxa/Muslim_Encyclopedia_Lite.exe/file";
 
-
 // Default counters values
-let fullofflineCount = 16;
+let fullofflineCount = 16; // Use default as API is unavailable
 let offlineCount = 40;
 let onlineCount = 41;
-
 
 // Counters showers
 let fullofflineCountShower = document.getElementById("fullofflineCountShower");
 let offlineCountShower = document.getElementById("offlineCountShower");
 let onlineCountShower = document.getElementById("onlineCountShower");
 
+// Display the initial count for full offline download
+fullofflineCountShower.innerHTML = `عدد التحميلات: ${fullofflineCount}`;
 
 // Fetch initial download counts using Axios GET requests
-// Check if fullofflineCountURL is available and update count if possible
-/*axios.get(fullofflineCountURL)
-    .then((response) => {
-        fullofflineCount = response.data.count;
-        
-    })
-    .catch((error) => {
-        console.warn("Full offline download count endpoint not available. Using default count:", fullofflineCount);
-        fullofflineCountShower.innerHTML = `عدد التحميلات: ${fullofflineCount}`;
-    });*/
-
 axios.get(offlineCountURL)
     .then((response) => {
         offlineCount = response.data.count;
         offlineCountShower.innerHTML = `عدد التحميلات: ${offlineCount}`;
-        fullofflineCountShower.innerHTML = `عدد التحميلات: ${fullofflineCount}`;
     })
     .catch((error) => console.error("Error fetching offline download count:", error));
 
@@ -70,22 +51,16 @@ axios.get(onlineCountURL)
     })
     .catch((error) => console.error("Error fetching online download count:", error));
 
+// Handle download clicks
 
-
-// Handle download click
-
-// Handle full offline download click
+// Full offline download (without API increment)
 fullofflineDownload.addEventListener("click", () => {
-   /* axios.post(fullofflineIncrementURL, { type: "fulloffline" })
-        .then((response) =>*/ {
-            fullofflineCount++;
-            fullofflineCountShower.innerHTML = `عدد التحميلات: ${fullofflineCount}`;
-            window.open(fullofflineURL);
-        })
-        .catch((error) => console.error("Error incrementing full offline download count:", error));
+    fullofflineCount++;
+    fullofflineCountShower.innerHTML = `عدد التحميلات: ${fullofflineCount}`;
+    window.open(fullofflineURL);
 });
 
-// Handle offline download click
+// Offline download with API increment
 offlineDownload.addEventListener("click", () => {
     axios.post(offlineIncrementURL, { type: "offline" })
         .then((response) => {
@@ -96,7 +71,7 @@ offlineDownload.addEventListener("click", () => {
         .catch((error) => console.error("Error incrementing offline download count:", error));
 });
 
-// Handle online download click
+// Online download with API increment
 onlineDownload.addEventListener("click", () => {
     axios.post(onlineIncrementURL, { type: "online" })
         .then((response) => {
