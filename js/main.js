@@ -3,7 +3,7 @@ const baseURL = "https://counting-api.onrender.com";
 
 
 // buttons
-let fullofflineDownload = document.getElementById("full-offline-download");
+//let fullofflineDownload = document.getElementById("full-offline-download");
 let offlineDownload = document.getElementById("offline-download");
 let onlineDownload = document.getElementById("online-download");
 
@@ -14,51 +14,52 @@ onlineDownload.style.cursor = "pointer";
 
 
 // API endpoints
-let fullofflineIncrementURL = `${baseURL}/downloads/fulloffline/increment`;
+//let fullofflineIncrementURL = `${baseURL}/downloads/fulloffline/increment`;
 let offlineIncrementURL = `${baseURL}/downloads/offline/increment`;
 let onlineIncrementURL = `${baseURL}/downloads/online/increment`;
 
 
 // Count Url
-let fullofflineCountURL = `${baseURL}/downloads/fulloffline/count`;
+//let fullofflineCountURL = `${baseURL}/downloads/fulloffline/count`;
 let offlineCountURL = `${baseURL}/downloads/offline/count`;
 let onlineCountURL = `${baseURL}/downloads/online/count`;
 
 
 // URLs for downloads
-let fullofflineURL = "#";
+let fullofflineURL = "https://www.mediafire.com/file/z2pz1dq1ywo5sb7/MuslimEncyclopedia.rar/file";
 let offlineURL = "https://www.mediafire.com/file/orhjvbyzbpb3sap/MuslimEncyclopedia.rar/file";
 let onlineURL = "https://www.mediafire.com/file/d8pk428lzfalgxa/Muslim_Encyclopedia_Lite.exe/file";
 
 
 // Default counters values
-let fullofflineCount = 15;
+let fullofflineCount = 16;
 let offlineCount = 40;
 let onlineCount = 41;
 
 
 // Counters showers
-let fullofflineCountShower = document.getElementById("fullofflineCountShower");
+//let fullofflineCountShower = document.getElementById("fullofflineCountShower");
 let offlineCountShower = document.getElementById("offlineCountShower");
 let onlineCountShower = document.getElementById("onlineCountShower");
 
 
 // Fetch initial download counts using Axios GET requests
 // Check if fullofflineCountURL is available and update count if possible
-axios.get(fullofflineCountURL)
+/*axios.get(fullofflineCountURL)
     .then((response) => {
         fullofflineCount = response.data.count;
-        fullofflineCountShower.innerHTML = `/n عدد التحميلات: ${fullofflineCount}`;
+        
     })
     .catch((error) => {
         console.warn("Full offline download count endpoint not available. Using default count:", fullofflineCount);
         fullofflineCountShower.innerHTML = `عدد التحميلات: ${fullofflineCount}`;
-    });
+    });*/
 
 axios.get(offlineCountURL)
     .then((response) => {
         offlineCount = response.data.count;
         offlineCountShower.innerHTML = `عدد التحميلات: ${offlineCount}`;
+        fullofflineCountShower.innerHTML = `عدد التحميلات: ${fullofflineCount}`;
     })
     .catch((error) => console.error("Error fetching offline download count:", error));
 
@@ -75,8 +76,8 @@ axios.get(onlineCountURL)
 
 // Handle full offline download click
 fullofflineDownload.addEventListener("click", () => {
-    axios.post(fullofflineIncrementURL, { type: "fulloffline" })
-        .then((response) => {
+   /* axios.post(fullofflineIncrementURL, { type: "fulloffline" })
+        .then((response) =>*/ {
             fullofflineCount++;
             fullofflineCountShower.innerHTML = `عدد التحميلات: ${fullofflineCount}`;
             window.open(fullofflineURL);
