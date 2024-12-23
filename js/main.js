@@ -24,7 +24,7 @@ let offlineURL = "https://www.mediafire.com/file/orhjvbyzbpb3sap/MuslimEncyclope
 let onlineURL = "https://www.mediafire.com/file/d8pk428lzfalgxa/Muslim_Encyclopedia_Lite.exe/file";
 
 // Default counters values
-let fullofflineCount = 39; // Use default as API is unavailable
+let fullofflineCount = 45; // Use default as API is unavailable
 let offlineCount = 40;
 let onlineCount = 41;
 
