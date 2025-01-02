@@ -322,6 +322,12 @@
                 img.src = `./image/desktop/${i}.png`;
                 img.alt = `screenshot desktop ${i}`;
                 listItem.appendChild(img);
+
+                if (i >= 3) {
+                 img.loading = "lazy";
+                 img.fetchpriority = "low";
+                }
+                
                 listContainer.appendChild(listItem);
             }
         </script>
@@ -344,6 +350,12 @@
                 img.src = `./image/desktop/lite version/${i}.png`;
                 img.alt = "screenshot desktop";
                 listItem.appendChild(img);
+
+                if (i >= 3) {
+                 img.loading = "lazy";
+                 img.fetchpriority = "low";
+                }
+                
                 screenshotList.appendChild(listItem);
             }
         </script>
