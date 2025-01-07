@@ -24,7 +24,7 @@ let offlineURL = "https://www.mediafire.com/file/orhjvbyzbpb3sap/موسوعة+ا
 let onlineURL = "https://www.mediafire.com/file/4fepk1fo2qjts8t/MuslimEncyclopedia_Lite.rar";
 
 // Default counters values
-let fullofflineCount = 45; // Use default as API is unavailable
+let fullofflineCount = 55; // Use default as API is unavailable
 let offlineCount = 40;
 let onlineCount = 41;
 
