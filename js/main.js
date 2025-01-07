@@ -19,7 +19,7 @@ let offlineCountURL = `${baseURL}/downloads/offline/count`;
 let onlineCountURL = `${baseURL}/downloads/online/count`;
 
 // URLs for downloads
-let fullofflineURL = "";
+let fullofflineURL = "https://www.mediafire.com/file/orhjvbyzbpb3sap/موسوعة+المسلم.rar/file";
 let offlineURL = "https://www.mediafire.com/file/orhjvbyzbpb3sap/موسوعة+المسلم.rar/file";
 let onlineURL = "https://www.mediafire.com/file/4fepk1fo2qjts8t/MuslimEncyclopedia_Lite.rar";
 
