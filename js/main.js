@@ -19,9 +19,9 @@ let offlineCountURL = `${baseURL}/downloads/offline/count`;
 let onlineCountURL = `${baseURL}/downloads/online/count`;
 
 // URLs for downloads
-let fullofflineURL = "https://www.mediafire.com/file/z2pz1dq1ywo5sb7/MuslimEncyclopedia.rar/file";
+let fullofflineURL = "";
 let offlineURL = "https://www.mediafire.com/file/orhjvbyzbpb3sap/موسوعة+المسلم.rar/file";
-let onlineURL = "https://www.mediafire.com/file/4fepk1fo2qjts8t/%25D9%2585%25D9%2588%25D8%25B3%25D9%2588%25D8%25B9%25D8%25A9_%25D8%25A7%25D9%2584%25D9%2585%25D8%25B3%25D9%2584%25D9%2585_%25D9%2584%25D8%25A7%25D9%258A%25D8%25AA.rar/file";
+let onlineURL = "https://www.mediafire.com/file/4fepk1fo2qjts8t/MuslimEncyclopedia_Lite.rar";
 
 // Default counters values
 let fullofflineCount = 45; // Use default as API is unavailable
