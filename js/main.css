@@ -1,0 +1,939 @@
+@font-face {
+    font-family: "Al_Jazeera";
+    src: url(../font/Al-Jazeera-Arabic-Bold.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: 'Amiri';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../font/Amiri.woff2) format('woff2');
+    unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+}
+
+html,
+body {
+    margin: 0 0 0 0;
+    background-color: #191825;
+    color: #1b1b1f;
+    direction: rtl;
+    font-family: "Al_Jazeera";
+}
+
+img {
+    user-select: none;
+}
+
+
+#header {
+    background-color: #f1f1f1;
+    backdrop-filter: blur(10px);
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    padding: 0;
+    top: 0px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+#header ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    list-style: none;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* Professional header layout */
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 12px;
+    height: 70px;
+    gap: 10px;
+}
+
+.site-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.site-brand #logo {
+    width: 52px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.site-title {
+    font-family: "Al_Jazeera";
+    color: #1b1b1f;
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.social-links img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Main navigation */
+.main-nav {
+    margin: 0 12px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #222222;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: background-color .12s ease, color .12s ease;
+}
+
+.nav-links a:hover {
+    background-color: #f2f2f6;
+}
+
+.right-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-inline-start: auto;
+}
+
+.header-cta {
+    display: inline-block;
+    padding: 10px 14px;
+    background: #9B7EBD;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 800;
+    box-shadow: 0 6px 18px rgba(155,126,189,0.12);
+    transition: transform .12s ease, background-color .12s ease;
+}
+
+.header-cta:hover {
+    transform: translateY(-2px);
+    background: #af96cc;
+}
+
+/* compact green download button placed after social icons */
+.header-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 36px;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    text-decoration: none;
+    color: #28a745;
+    font-weight: 700;
+    padding: 0 8px;
+}
+
+.header-download-btn:hover {
+    background: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(40,167,69,0.08);
+}
+
+/* moved inline styles from HTML */
+.site-subtitle {
+    margin: 0;
+    font-size: 12px;
+    color: #6b6b6b;
+}
+
+.fixed-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #5a2f8a 0%, #3b0f5a 100%);
+    color: #fff;
+    padding: 12px 14px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(59,15,90,0.28);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 260px;
+    max-width: 320px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 320ms ease, opacity 320ms ease;
+}
+
+.fixed-box h3 { margin: 0; font-size: 14px; line-height: 1.1; }
+
+/* visible state */
+.fixed-box.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* hidden state */
+.fixed-box.hide {
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.notification-close {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.9);
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.notification-close:hover {
+    background: rgba(255,255,255,0.06);
+}
+
+/* pause animation on hover */
+.fixed-box:hover { box-shadow: 0 12px 40px rgba(59,15,90,0.36); }
+
+.responsive-iframe {
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+
+/* video wrapper to allow border-radius on the embedded video */
+.video-wrapper {
+    width: 45%;
+    max-width: 100%;
+    margin: 0 auto 50px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 700px) {
+    .video-wrapper {
+        width: 100%;
+        padding: 0 12px;
+        box-shadow: none;
+    }
+}
+
+.header-download-btn .download-text {
+    color: #000000;
+    font-size: 13px;
+    line-height: 1;
+}
+
+.header-download-btn .download-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* ensure SVG paths inside the button are green */
+.header-download-btn .download-icon path { fill: #28a745; }
+
+/* Font Awesome / icon font color and size inside header download button */
+.header-download-btn .download-icon {
+    color: #28a745;
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* Hamburger menu button */
+.header-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.hamburger {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #333;
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 22px;
+    height: 2px;
+    background: #333;
+}
+
+.hamburger::before { top: -7px; }
+.hamburger::after { bottom: -7px; }
+
+/* Responsive: collapse nav into hamburger on small screens */
+@media (max-width: 900px) {
+    .main-nav { display: none; }
+    .header-menu-btn { display: inline-block; }
+    /* keep compact download icon visible on mobile */
+    .header-download-btn { display: inline-flex; }
+}
+
+/* When header has nav-open, show mobile menu */
+#header.nav-open .main-nav {
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    left: 0;
+    background: #ffffff;
+    padding: 12px 18px 18px 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+#header.nav-open .main-nav .nav-links {
+    flex-direction: column;
+    gap: 12px;
+}
+
+#header.nav-open .header-download-btn { display: inline-flex; }
+
+@media (max-width: 420px) {
+    .site-title { font-size: 14px; }
+}
+
+#right ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    list-style: none;
+}
+
+#right ul li {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+#right ul li a {
+    text-decoration: none;
+}
+
+.icon_header {
+    width: 25px;
+    transition: 0.5s ease-in-out;
+}
+
+.icon_header:hover {
+    width: 30px;
+    transition: 0.5s ease-in-out;
+}
+
+#logo {
+    cursor: pointer;
+    background-color: #ffffff;
+    border: #000000 1px dashed;
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #33304b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #484668;
+}
+
+
+/* ======== المحتوى ======== */
+
+#content {
+    margin-top: 70px;
+}
+
+#info {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 10px;
+    list-style: none;
+    margin-left: 10px;
+    margin-right: 0px;
+    margin-top: 150px;
+}
+
+#info li {
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 100%;
+}
+
+#laptop {
+    display: block;
+    max-width: 100%;
+    margin-left: 15px;
+    margin-right: auto;
+}
+
+#info_text h1 {
+    text-align: right;
+    margin: 0;
+    background: #ffffff;
+    background: linear-gradient(to right, #ffffff 40%, #ffffff 74%);
+    background-clip: text; /* خاصية قياسية */
+    -webkit-background-clip: text; /* خاصية خاصة بـ WebKit */
+    -webkit-text-fill-color: transparent;
+    font-size: 35px;
+}
+
+#info_text p {
+    overflow-wrap: break-word;
+    text-align: justify;
+    color: #0080fe;
+}
+
+#but {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#but button {
+    width: 150px;
+    padding: 10px;
+    border: 2px solid #9B7EBD;
+    border-radius: 7px;
+    font-family: "Al_Jazeera";
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#download {
+    background-color: #9B7EBD;
+    color: #ffffff;
+    transition: 0.5s ease-in-out;
+}
+
+#download:hover {
+    background-color: #af96cc;
+    border: 2px solid #9B7EBD;
+    transition: 0.5s ease-in-out;
+    color: #000000;
+}
+
+#features {
+    background-color: #ffffff00;
+    color: #B2A59B;
+    transition: 0.5s ease-in-out;
+}
+
+#features:hover {
+    background-color: #af96cc;
+    transition: 0.5s ease-in-out;
+    color: #000000;
+}
+
+/* features */
+
+.line {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.line h2 {
+    padding-top: 20px;
+    margin: 0;
+    color: #0080fe;
+}
+
+.line img {
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#features_ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* padding: 0px; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* list-style: none; */
+    background-color: #e6e6e6;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+}
+
+#features_ul li {
+    width: calc(100% / 2);
+    align-items: center;
+    border-radius: 7px;
+    color: #1b1b1f;
+}
+
+#features_ul li p {
+    text-align: right;
+    font-size: 15px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    /* margin-right: 0px; */
+}
+
+#features_ul li img {
+    width: 15px;
+    margin-right: 8px;
+    vertical-align: middle
+}
+
+
+/* تحميل - modern card layout */
+
+
+#download_ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin: 0 5px;
+}
+
+#download_ul li {
+    /* keep similar sizing as previous layout: approx half of available area */
+    flex: 0 0 calc(80% / 2);
+    max-width: 48%;
+}
+
+.download-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background-color: #ffffff;
+    padding: 14px 16px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.system_icon {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.download-info {
+    flex: none;
+    text-align: center;
+}
+
+.download-title {
+    margin: 0 0 6px 0;
+    font-size: 16px;
+    font-weight: 800;
+    color: #222222;
+}
+
+.muted {
+    color: #8b8b8b;
+    font-weight: 700;
+    font-size: 13px;
+    display: inline-block;
+    margin-inline-start: 6px;
+}
+
+.download-desc {
+    margin: 0 0 25px 0;
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.3;
+}
+
+.download-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: transparent;
+    color: #28a745;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 800;
+    border: 2px solid #28a745;
+    box-shadow: none;
+    width: 120px;
+    transition: background-color .16s ease, color .12s ease, transform .12s ease, box-shadow .12s ease;
+}
+
+.download-btn:hover,
+.download-btn.exe-btn :hover,
+.download-btn.outline:hover {
+    transform: translateY(-2px);
+    background-color: #28a745;
+    color: #ffffff;
+    border-color: #28a745;
+    box-shadow: 0 6px 18px rgba(40,167,69,0.12);
+}
+
+/* ensure inactive variants share the same base appearance */
+.download-btn.exe-btn ,
+.download-btn.outline {
+    background: transparent;
+    color: #28a745;
+    border: 2px solid #28a745;
+}
+
+/* keyboard focus accessibility */
+.download-btn:focus-visible,
+.download-btn.exe-btn :focus-visible,
+.download-btn.outline:focus-visible {
+    outline: 3px solid rgba(40,167,69,0.16);
+    outline-offset: 2px;
+}
+
+.download-btn-icon { width: 20px; height: 20px; display: inline-block; }
+
+.download-count { font-size: 13px; color: #9b8f8f; }
+
+@media (max-width: 900px) {
+    .download-card { gap: 12px; }
+    #download_ul { gap: 12px; }
+}
+
+@media (max-width: 700px) {
+    #download_ul { flex-direction: column; gap: 12px; }
+    #download_ul li { max-width: 100%; }
+    .download-card { align-items: center; }
+    .download-actions { flex-direction: row; gap: 10px; flex: 0 0 auto; }
+}
+
+/* Store */
+
+#down_store {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0px;
+    list-style: none;
+}
+
+#down_store li {
+    margin: 10px 10px 10px 10px;
+}
+
+#down_store li a {
+    margin: 0;
+    text-decoration: none;
+}
+
+#down_store li img {
+    width: 200px;
+}
+
+/* review */
+
+#review {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0px;
+    list-style: none;
+}
+
+#review li {
+    width: calc(80% / 2);
+    margin: 10px 10px 10px 10px;
+}
+
+#review li a {
+    margin: 0;
+    text-decoration: none;
+}
+
+#review li img {
+    max-width: 100%;
+}
+
+/* footer */
+
+/* ======== صندوق تحميل الخطوط و التحديثات (قابل للاستجابة) ======== */
+.fix-files {
+    text-align: center;
+    margin: 10px auto;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    width: 60%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 140px;
+}
+
+.fix-files p {
+    flex: 1 1 100%;
+    margin: 10px 0 18px 0;
+    color: #333333;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.font-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background-color: #44026b;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: transform .12s ease, background-color .12s ease;
+}
+
+.font-btn:hover {
+    background-color: #5b2f94;
+    transform: translateY(-2px);
+}
+
+.font-btn.exe-btn  {
+    background-color: #28a745;
+}
+
+.font-btn.exe-btn :hover {
+    background-color: #218838;
+}
+
+@media (max-width: 700px) {
+    .fix-files {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .font-btn {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+    }
+
+    .fix-files p {
+        order: -1;
+        padding-bottom: 6px;
+    }
+}
+
+/* container for vertical actions to ensure buttons stack and center */
+.fix-files-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Footer - clean, transparent and professional */
+#footer {
+    margin-top: 100px;
+    background: transparent; /* removed solid background */
+    text-align: center;
+    color: #dcdce6;
+    padding: 28px 12px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+#footer .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* center horizontally */
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+#footer .footer-left,
+#footer .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#footer .footer-left p,
+#footer .footer-right p { margin: 0; color: inherit; }
+
+#footer a { color: #9B7EBD; text-decoration: none; font-weight: 700; }
+#footer a:hover { text-decoration: underline; color: #bfa6d4; }
+
+#footer .footer-note { font-size: 13px; color: rgba(220,220,230,0.86); }
+
+/* footer copy: center and control mixed-direction text */
+#footer .footer-copy {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+#footer .footer-english { direction: ltr; white-space: nowrap; }
+#footer .footer-ar { direction: rtl; white-space: nowrap; }
+#footer .footer-sep { color: rgba(220,220,230,0.6); margin: 0 6px; }
+
+.screenshot {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0px;
+    list-style: none;
+    overflow-x: scroll;
+    direction: rtl;
+}
+
+.screenshot li {
+
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.screenshot li img {
+    max-width: 200px;
+    display: block;
+    border-radius: 5px;
+}
+
+.desktop li img {
+    max-width: 400px;
+    display: block;
+    border-radius: 15px;
+}
+
+@media (max-width: 1100px) {
+
+    #features_ul li p {
+        text-align: right;
+    }
+
+    #features_ul li {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    #info {
+        display: block;
+        padding: 10px;
+        margin-top: 50px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .header-container {
+        padding: 0 12px;
+    }
+
+    .site-title {
+        font-size: 15px;
+    }
+
+    .social-links a {
+        width: 34px;
+        height: 34px;
+    }
+
+    #info li {
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-bottom: 50px;
+    }
+
+    #laptop {
+        display: block;
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 400px) {
+
+    #download_ul li {
+        width: 90%;
+    }
+}
