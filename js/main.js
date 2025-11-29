@@ -81,3 +81,80 @@ onlineDownload.addEventListener("click", () => {
         })
         .catch((error) => console.error("Error incrementing online download count:", error));
 });
+
+// Header mobile menu toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('header');
+    const menuBtn = document.querySelector('.header-menu-btn');
+
+    if (menuBtn && header) {
+        menuBtn.addEventListener('click', () => {
+            const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', String(!expanded));
+            header.classList.toggle('nav-open');
+        });
+    }
+    
+    // Notification box behaviour (show/hide like app notifications)
+    const notification = document.getElementById('notificationBox');
+    const closeBtn = document.getElementById('notificationClose');
+    if (notification) {
+        let showTimeout = null;
+        let hideTimeout = null;
+        let loopInterval = null;
+
+        const showNotification = () => {
+            notification.classList.remove('hide');
+            notification.classList.add('show');
+        };
+
+        const hideNotification = () => {
+            notification.classList.remove('show');
+            notification.classList.add('hide');
+        };
+
+        const startLoop = () => {
+            // show immediately, hide after 4s, then repeat every 6s
+            showNotification();
+            hideTimeout = setTimeout(hideNotification, 4000);
+            loopInterval = setInterval(() => {
+                showNotification();
+                clearTimeout(hideTimeout);
+                hideTimeout = setTimeout(hideNotification, 4000);
+            }, 6000);
+        };
+
+        const stopLoop = () => {
+            clearInterval(loopInterval);
+            clearTimeout(hideTimeout);
+            clearTimeout(showTimeout);
+        };
+
+        // start loop after DOM load
+        startLoop();
+
+        // Pause when user hovers the notification
+        notification.addEventListener('mouseenter', () => {
+            stopLoop();
+            // ensure it's visible while hovering
+            showNotification();
+        });
+
+        notification.addEventListener('mouseleave', () => {
+            // resume loop after leaving
+            hideTimeout = setTimeout(hideNotification, 3000);
+            loopInterval = setInterval(() => {
+                showNotification();
+                clearTimeout(hideTimeout);
+                hideTimeout = setTimeout(hideNotification, 4000);
+            }, 6000);
+        });
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                stopLoop();
+                notification.remove();
+            });
+        }
+    }
+});
