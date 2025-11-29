@@ -28,47 +28,58 @@
 
     <!-- ================ HEADER =============== -->
 
-    <header id="header">
-        <ul>
-            <li id="right" class="">
-                <ul>
+    <header id="header" role="banner">
+        <div class="header-container">
+            <div class="site-brand">
+                <img src="./image/Applogo.png" id="logo" alt="شعار موسوعة المسلم">
+                <div>
+                    <h1 class="site-title">موسوعة المسلم</h1>
+                    <p class="site-subtitle">تطبيق إسلامي جامع للكثير من الميزات</p>
+                </div>
+            </div>
 
-                    <li>
-                        <a href="https://www.youtube.com/channel/UCbFjpt37dvT1GqdXCNQ1Opg" target="_blank">
-                            <img src="./image/youtube.png" class="icon_header" alt="youtube">
-                        </a>
-                    </li>
+            <div class="right-actions">
 
-                    <li>
-                        <a href="https://www.facebook.com/M5RDEV.Facebook" target="_blank">
-                            <img src="./image/facebook.png" class="icon_header" alt="facebook">
-                        </a>
-                    </li>
+                <nav class="social-links" aria-label="روابط التواصل الاجتماعي">
+                    <a href="https://www.youtube.com/channel/UCbFjpt37dvT1GqdXCNQ1Opg" target="_blank"
+                        aria-label="YouTube">
+                        <img src="./image/youtube.png" alt="YouTube">
+                    </a>
 
-                    <li>
-                        <a href="https://www.instagram.com/m5rdev/" target="_blank">
-                            <img src="./image/instagram.png" class="icon_header" alt="instagram">
-                        </a>
-                    </li>
+                    <a href="https://www.facebook.com/M5RDEV.Facebook" target="_blank" aria-label="Facebook">
+                        <img src="./image/facebook.png" alt="Facebook">
+                    </a>
 
-                    <li>
-                        <a href="https://www.threads.net/@m5rdev" target="_blank">
-                            <img src="./image/threads.png" class="icon_header" alt="threads">
-                        </a>
-                    </li>
+                    <a href="https://www.instagram.com/m5rdev/" target="_blank" aria-label="Instagram">
+                        <img src="./image/instagram.png" alt="Instagram">
+                    </a>
 
-                </ul>
-            </li>
+                    <a href="https://www.threads.net/@m5rdev" target="_blank" aria-label="Threads">
+                        <img src="./image/threads.png" alt="Threads">
+                    </a>
+                </nav>
+                <a class="header-download-btn" href="#download_title" title="تحميل" aria-label="تحميل">
+                    <span class="download-text">تحميل</span>
+                    <svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 3a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 0 1 1.414 1.414l-4 4a.997.997 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L11 12.586V4a1 1 0 0 1 1-1z" />
+                        <path d="M5 18a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z" />
+                    </svg>
+                </a>
 
-            <li id="left">
-                <img src="./image/Applogo.png" id="logo"></a>
-            </li>
-        </ul>
+                <button class="header-menu-btn" aria-label="قائمة" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
     </header>
 
-    <div class="fixed-box"
-        style="position: fixed; bottom: 20px; right: 20px; background-color: #44026b; color: #fff; padding: 10px; border-radius: 5px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); display: flex; align-items: center;">
-        <h3 style="margin: 0;">لا تنسوا الدعاء لاهلنا في غزه و السودان</h3>
+    <div class="fixed-box hide" id="notificationBox" role="status" aria-live="polite">
+        <div>
+            <h3>لا تنسوا الدعاء لاهلنا في غزه و السودان</h3>
+        </div>
+        <button class="notification-close" id="notificationClose" aria-label="إغلاق">×</button>
     </div>
 
     <!-- ================ CONTENT =============== -->
@@ -122,34 +133,34 @@
         </div>
 
         <ul id="features_ul" class="#featuresul"></ul>
-<script>
-    const features = [
-        "تسجيلات القرآن الكريم 22 قارئ للنسخة الأوفلاين و 27 للنسخة (الأونلاين)",
-        "16 طابعة للمصاحف [طباعة المدينة - مصر - تونس - الأردية]",
-        "الوضوء و الصلاة و سنن مهجوره و أخطأ شائعة فيهما",
-        "الأذان [جاري العمل على إضافتة قريبا إن شاء الله]",
-        "علامات الساعة مع شرح بسيط لك علامة",
-        "أذكار الصباح و المساء ... إالخ",
-        "أسماء الله الحسنى وشرح معانيها",
-        "العشرة المبشرين بالجنة مع نبذه عنه",
-        "جزء من السيرة النبوية",
-        "مجموعة من الاحاديث",
-        "الإعجاز العلمي في القرآن",
-        "شرح لفضل بعض العبادات",
-        "أدعية من القران الكريم",
-        "نساء عظيمة في الإسلام",
-        "12 فديو تعليمي",
-        "الرقية الشرعية",
-        "لعبة أسئلة دينية",
-        "فرص ذهبيه",
-        "اية وعبرة",
-        "مجاني بالكامل"
-    ];
-    const featuresUl = document.getElementById('features_ul');
-    
-    features.forEach(feature => {
-        const li = document.createElement('li');
-        li.innerHTML = `
+        <script>
+            const features = [
+                "تسجيلات القرآن الكريم 22 قارئ للنسخة الأوفلاين و 27 للنسخة (الأونلاين)",
+                "16 طابعة للمصاحف [طباعة المدينة - مصر - تونس - الأردية]",
+                "الوضوء و الصلاة و سنن مهجوره و أخطأ شائعة فيهما",
+                "الأذان [جاري العمل على إضافتة قريبا إن شاء الله]",
+                "علامات الساعة مع شرح بسيط لك علامة",
+                "أذكار الصباح و المساء ... إالخ",
+                "أسماء الله الحسنى وشرح معانيها",
+                "العشرة المبشرين بالجنة مع نبذه عنه",
+                "جزء من السيرة النبوية",
+                "مجموعة من الاحاديث",
+                "الإعجاز العلمي في القرآن",
+                "شرح لفضل بعض العبادات",
+                "أدعية من القران الكريم",
+                "نساء عظيمة في الإسلام",
+                "12 فديو تعليمي",
+                "الرقية الشرعية",
+                "لعبة أسئلة دينية",
+                "فرص ذهبيه",
+                "اية وعبرة",
+                "مجاني بالكامل"
+            ];
+            const featuresUl = document.getElementById('features_ul');
+
+            features.forEach(feature => {
+                const li = document.createElement('li');
+                li.innerHTML = `
             <p>
                 ${feature}
                 <span>
@@ -157,10 +168,10 @@
                 </span>
             </p>
         `;
-        featuresUl.appendChild(li);
-    });
-</script>
-        
+                featuresUl.appendChild(li);
+            });
+        </script>
+
         <div class="line">
             <h2 id="screenshot_desktop_title">
                 صور لتطبيق سطح المكتب
@@ -181,10 +192,10 @@
                 listItem.appendChild(img);
 
                 if (i >= 3) {
-                 img.loading = "lazy";
-                 img.fetchpriority = "low";
+                    img.loading = "lazy";
+                    img.fetchpriority = "low";
                 }
-                
+
                 listContainer.appendChild(listItem);
             }
         </script>
@@ -209,14 +220,14 @@
                 listItem.appendChild(img);
 
                 if (i >= 3) {
-                 img.loading = "lazy";
-                 img.fetchpriority = "low";
+                    img.loading = "lazy";
+                    img.fetchpriority = "low";
                 }
-                
+
                 screenshotList.appendChild(listItem);
             }
         </script>
-        
+
         <div class="line">
             <h2 id="download_title">
                 تحميل
@@ -224,51 +235,83 @@
             <img src="./image/line.png" alt="line">
         </div>
 
-                 <div class="line">
+        <div class="line">
             <h2>
                 شاهد الفيديو التوضيحي للتحميل للويندوز أولا
             </h2>
-            <img src="./image/line.png" alt="line">
         </div>
-        
-        <iframe 
-                 width="75%" 
-                 style="aspect-ratio: 16 / 9; border: none; display: block; margin: 0 auto;" 
-                 src="https://www.youtube.com/embed/ZBvzeMvdH8s?rel=0&vq=hd1080" 
-                 title="طريقة تحميل تطبيق موسوعة المسلم للكمبيوتر و إضافة القراء و تثبيت الخطوط بالطريقة الصحيحة 100%" 
-                 frameborder="0" 
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                 referrerpolicy="strict-origin-when-cross-origin" 
-                 allowfullscreen>
-        </iframe>
 
-        <ul id="download_ul">
+        <div class="video-wrapper">
+            <iframe class="responsive-iframe" src="https://www.youtube.com/embed/ZBvzeMvdH8s?rel=0&vq=hd1080"
+                title="طريقة تحميل تطبيق موسوعة المسلم للكمبيوتر و إضافة القراء و تثبيت الخطوط بالطريقة الصحيحة 100%"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+        <ul id="download_ul" class="download-list">
             <li>
-                <img src="./image/windows.png" class="system_icon" alt="windows" width="50px">
-                <h3>([22 قارئ] 26GB نسخة لا تحتاج إنترنت)</h3>
-                <h3>غير مكتمل حاليا - لا تحمل هذا الإصدار حمل النسخة الأوفلاين [تحميل القراء يدوي] أو النسخة الأونلاين</h3>
-                <a id="full-offline-download">
-                    <img src="image/download.png" width="50">
-                </a>
-                <span id="fullofflineCountShower"></span>
+                <div class="download-card">
+                    <img src="./image/windows.png" class="system_icon" alt="windows">
+
+                    <div class="download-info">
+                        <h4 class="download-title">نسخة أوفلاين كاملة <span class="muted">([22 قارئ] • 26 GB)</span>
+                        </h4>
+                        <p class="download-desc">غير مكتملة حالياً — لا تحميل هذه النسخة الآن. استخدم النسخة الأوفلاين المخففة أو الأونلاين.</p>
+                    </div>
+
+                    <div class="download-actions">
+                        <a id="full-offline-download" class="download-btn" role="button"
+                            aria-label="تحميل النسخة الكاملة">
+                            <img src="image/download.png" alt="download" class="download-btn-icon">
+                            <span>تحميل</span>
+                        </a>
+                        <span id="fullofflineCountShower" class="download-count" aria-hidden="true"></span>
+                    </div>
+                </div>
             </li>
 
             <li>
-                <img src="./image/windows.png" class="system_icon" alt="windows" width="50px">
-                <h3>([لكن تحميل القراء يدوي] 1.7GB نسخة لا تحتاج إنترنت)</h3>
-                <a id="offline-download">
-                    <img src="image/download.png" width="50">
-                </a>
-                <span id="offlineCountShower"></span>
+                <div class="download-card">
+                    <img src="./image/windows.png" class="system_icon" alt="windows">
+
+                    <div class="download-info">
+                        <h4 class="download-title">نسخة أوفلاين مخففة <span class="muted">([بدون قراء] • 1.7 GB)</span>
+                        </h4>
+                        <p class="download-desc">نسخة مخففة — ملائمة لمن يرغب بتحميل البرنامج بدون القراء ويختار تحميل
+                            قراء يدويا.</p>
+                    </div>
+
+                    <div class="download-actions">
+                        <a id="offline-download" class="download-btn exe-btn " role="button"
+                            aria-label="تحميل النسخة المصغرة">
+                            <img src="image/download.png" alt="download" class="download-btn-icon">
+                            <span>تحميل</span>
+                        </a>
+                        <span id="offlineCountShower" class="download-count" aria-hidden="true"></span>
+                    </div>
+                </div>
             </li>
 
             <li>
-                <img src="./image/windows.png" class="system_icon" alt="windows" width="50px">
-                <h3>(0.5GB نسخة تحتاج إنترنت)</h3>
-                <a id="online-download">
-                    <img src="image/download.png" width="50">
-                </a>
-                <span id="onlineCountShower"></span>
+                <div class="download-card">
+                    <img src="./image/windows.png" class="system_icon" alt="windows">
+
+                    <div class="download-info">
+                        <h4 class="download-title">نسخة أونلاين <span class="muted">(0.5 GB)</span></h4>
+                        <p class="download-desc">نسخة تحتاج اتصال إنترنت — أخف وأسرع للتحميل والتجربة السريعة.</p>
+                    </div>
+
+                    <div class="download-actions">
+                        <a id="online-download" class="download-btn outline" role="button"
+                            aria-label="تحميل النسخة الأونلاين">
+                            <img src="image/download.png" alt="download" class="download-btn-icon">
+                            <span>تحميل</span>
+                        </a>
+                        <span id="onlineCountShower" class="download-count" aria-hidden="true"></span>
+                    </div>
+                </div>
             </li>
         </ul>
 
@@ -278,35 +321,36 @@
             </h2>
             <img src="./image/line.png" alt="line">
         </div>
-        
-        <div class="font-download-box" style="text-align: center; margin: 20px auto; background-color: #f9f9f9; padding: 15px; border-radius: 25px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); width: 55%;">
-            <p>للحصول على أفضل تجربة استخدام للويندوز، يجب تحميل وتثبيت خطوط البرنامج و استبدال الملف التنفيذي للتحديثات بعد اصلاح مشكلة عرض أخر تحديث.</p>
-            <a href="https://www.mediafire.com/file/zadnt5evsvp2gw3/Muslim+Fonts.rar/file" download target="_blank" style="color: #fff; background-color: #44026b; margin-left: 3px; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
-                تحميل الخطوط
-            </a>
 
-            <a href="https://www.mediafire.com/file/7uy3m32kbv5hi4u/تحديثات+التطبيق.exe/file" download target="_blank" style="color: #fff; background-color: #44026b; margin-right: 3px; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
-                تحميل الملف التنفيذي للتحديثات
-            </a>
+        <div class="fix-files">
+            <img src="./image/fix.png" class="system_icon" alt="fix-files">
+            <p>للحصول على أفضل تجربة استخدام للويندوز، يجب تحميل وتثبيت خطوط البرنامج <br>واستبدال الملف التنفيذي
+                للتحديثات بعد اصلاح مشكلة عرض أخر تحديث.</p>
+            <div class="fix-files-actions">
+                <a class="font-btn" href="https://www.mediafire.com/file/7uy3m32kbv5hi4u/تحديثات+التطبيق.exe/file"
+                    download target="_blank">
+                    تحميل الملف التنفيذي للتحديثات
+                </a>
 
-        </div>  
-        
+                <a class="font-btn exe-btn " href="https://www.mediafire.com/file/zadnt5evsvp2gw3/Muslim+Fonts.rar/file"
+                    download target="_blank">
+                    تحميل الخطوط
+                </a>
+            </div>
+        </div>
+
     </div>
 
     <!-- ================ FOOTER =============== -->
 
     <footer id="footer">
-
-        <p id="Copyright">
-            <span>
-                COPYRIGHT © 2024 <a target="_blank" href="https://m5rdev.github.io/M5RDEV">M5RDEV</a> </span>
-            <style>
-                a {
-                    text-decoration: none;
-                }
-            </style>
-        </p>
-
+        <div class="footer-inner">
+            <p class="footer-copy">
+                <span class="footer-english" dir="ltr">COPYRIGHT © 2024 <a target="_blank" href="https://m5rdev.github.io/M5RDEV">M5RDEV</a></span>
+                <span class="footer-sep">—</span>
+                <span class="footer-ar" dir="rtl">جميع الحقوق محفوظة موسوعة المسلم</span>
+            </p>
+        </div>
     </footer>
 
     <script src="./js/main.js" type="module"></script>
