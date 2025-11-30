@@ -408,27 +408,23 @@ img {
     align-items: stretch;
     padding: 10px;
     list-style: none;
-    margin-left: 10px;
-    margin-right: 0px;
-    margin-top: 150px;
+    margin: 20px 20px 0 10px;
 }
 
 #info li {
-    margin-right: 20px;
-    margin-left: 20px;
+    margin: 0 25px;
     width: 100%;
 }
 
 #laptop {
     display: block;
     max-width: 100%;
-    margin-left: 15px;
-    margin-right: auto;
+    margin: 0 15px 210px auto;
 }
 
 #info_text h1 {
     text-align: right;
-    margin: 0;
+    margin: 80px 0 0 0;
     background: #ffffff;
     background: linear-gradient(to right, #ffffff 40%, #ffffff 74%);
     background-clip: text; /* خاصية قياسية */
@@ -532,9 +528,7 @@ img {
 #features_ul li p {
     text-align: right;
     font-size: 15px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    /* margin-right: 0px; */
+    margin: 0px;
 }
 
 #features_ul li img {
