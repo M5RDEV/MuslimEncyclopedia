@@ -397,11 +397,6 @@ img {
 
 
 /* ======== المحتوى ======== */
-strong {
-    display: block;
-     text-align: center;
-}
-
 #content {
     margin-top: 70px;
 }
