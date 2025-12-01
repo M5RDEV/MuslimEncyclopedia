@@ -538,8 +538,6 @@ img {
 
 
 /* تحميل - modern card layout */
-
-
 #download_ul {
     display: flex;
     flex-wrap: wrap;
@@ -610,7 +608,7 @@ img {
     width: 100%;
 }
 
-.download-btn {
+.download-btn, .browse-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -627,7 +625,13 @@ img {
     transition: background-color .16s ease, color .12s ease, transform .12s ease, box-shadow .12s ease;
 }
 
+.browse-btn {
+    color: #dfb707;
+    border-color: #dfb707;
+}
+
 .download-btn:hover,
+.browse-btn:hover,
 .download-btn.exe-btn :hover,
 .download-btn.outline:hover {
     transform: translateY(-2px);
@@ -635,6 +639,11 @@ img {
     color: #ffffff;
     border-color: #28a745;
     box-shadow: 0 6px 18px rgba(40,167,69,0.12);
+}
+
+.browse-btn:hover {
+    background-color: #dfb707;
+    border-color: #dfb707;
 }
 
 /* ensure inactive variants share the same base appearance */
@@ -653,7 +662,7 @@ img {
     outline-offset: 2px;
 }
 
-.download-btn-icon { width: 20px; height: 20px; display: inline-block; }
+.download-btn-icon, .browse-btn-icon { width: 20px; height: 20px; display: inline-block; }
 
 .download-count { font-size: 13px; color: #9b8f8f; }
 
@@ -800,12 +809,11 @@ img {
 
 /* Footer - clean, transparent and professional */
 #footer {
-    margin-top: 100px;
+    margin-top: 50px;
     background: transparent; /* removed solid background */
     text-align: center;
     color: #dcdce6;
-    padding: 28px 12px;
-    border-top: 1px solid rgba(255,255,255,0.04);
+    padding: 12px;
 }
 
 #footer .footer-inner {
@@ -839,7 +847,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 2px;
     font-size: 14px;
 }
 
