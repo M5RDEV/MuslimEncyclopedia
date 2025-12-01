@@ -30,13 +30,13 @@ let muslimWebsiteURL = "https://m5rdev.github.io/MuslimEncyclopedia-online/";
 let fullofflineCount = 55; // Use default as API is unavailable
 let offlineCount = 40;
 let onlineCount = 41;
-let muslimWebsiteCount = 10;
+let websiteCount = 10; // Use default as API is unavailable
 
 // Counters showers
 let fullofflineCountShower = document.getElementById("fullofflineCountShower");
 let offlineCountShower = document.getElementById("offlineCountShower");
 let onlineCountShower = document.getElementById("onlineCountShower");
-let WebsiteCountShower = document.getElementById("WebsiteCountShower");
+let websiteCountShower = document.getElementById("websiteCountShower");
 
 // Fetch initial download counts using Axios GET requests
 axios.get(offlineCountURL)
@@ -89,8 +89,8 @@ onlineDownload.addEventListener("click", () => {
 
 // muslimEncyclopedia website browse (without API increment)
 muslimWebsite.addEventListener("click", () => {
-    muslimWebsiteCount++;
-    WebsiteCountShower.innerHTML = `عدد الزيارات: ${muslimWebsiteCount}`;
+    websiteCount++;
+    WebsiteCountShower.innerHTML = `عدد الزيارات: ${websiteCount}`;
     window.open(muslimWebsiteURL);
 });
 
