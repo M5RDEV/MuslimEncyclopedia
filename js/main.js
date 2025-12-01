@@ -5,10 +5,12 @@ const baseURL = "https://counting-api.onrender.com";
 let fullofflineDownload = document.getElementById("full-offline-download");
 let offlineDownload = document.getElementById("offline-download");
 let onlineDownload = document.getElementById("online-download");
+let muslimWebsite = document.getElementById("muslimEncy-website");
 
 offlineDownload.style.cursor = "pointer";
 fullofflineDownload.style.cursor = "pointer";
 onlineDownload.style.cursor = "pointer";
+muslimWebsite.style.cursor = "pointer";
 
 // API endpoints
 let offlineIncrementURL = `${baseURL}/downloads/offline/increment`;
@@ -22,16 +24,19 @@ let onlineCountURL = `${baseURL}/downloads/online/count`;
 let fullofflineURL = "https://www.mediafire.com/file/orhjvbyzbpb3sap/موسوعة+المسلم.rar/file";
 let offlineURL = "https://www.mediafire.com/file/orhjvbyzbpb3sap/موسوعة+المسلم.rar/file";
 let onlineURL = "https://www.mediafire.com/file/4fepk1fo2qjts8t/MuslimEncyclopedia_Lite.rar";
+let muslimWebsiteURL = "https://m5rdev.github.io/MuslimEncyclopedia-online/";
 
 // Default counters values
 let fullofflineCount = 55; // Use default as API is unavailable
 let offlineCount = 40;
 let onlineCount = 41;
+let muslimWebsiteCount = 10;
 
 // Counters showers
 let fullofflineCountShower = document.getElementById("fullofflineCountShower");
 let offlineCountShower = document.getElementById("offlineCountShower");
 let onlineCountShower = document.getElementById("onlineCountShower");
+let muslimWebsiteCountShower = document.getElementById("muslimWebsiteCountShower");
 
 // Fetch initial download counts using Axios GET requests
 axios.get(offlineCountURL)
@@ -80,6 +85,13 @@ onlineDownload.addEventListener("click", () => {
             window.open(onlineURL);
         })
         .catch((error) => console.error("Error incrementing online download count:", error));
+});
+
+// muslimEncyclopedia website browse (without API increment)
+muslimWebsite.addEventListener("click", () => {
+    muslimWebsiteCount++;
+    muslimWebsiteCountShower.innerHTML = `عدد الزيارات: ${muslimWebsiteCount}`;
+    window.open(muslimWebsiteURL);
 });
 
 // Header mobile menu toggle
