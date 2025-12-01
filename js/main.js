@@ -36,7 +36,7 @@ let muslimWebsiteCount = 10;
 let fullofflineCountShower = document.getElementById("fullofflineCountShower");
 let offlineCountShower = document.getElementById("offlineCountShower");
 let onlineCountShower = document.getElementById("onlineCountShower");
-let muslimWebsiteCountShower = document.getElementById("muslimWebsiteCountShower");
+let WebsiteCountShower = document.getElementById("WebsiteCountShower");
 
 // Fetch initial download counts using Axios GET requests
 axios.get(offlineCountURL)
@@ -90,7 +90,7 @@ onlineDownload.addEventListener("click", () => {
 // muslimEncyclopedia website browse (without API increment)
 muslimWebsite.addEventListener("click", () => {
     muslimWebsiteCount++;
-    muslimWebsiteCountShower.innerHTML = `عدد الزيارات: ${muslimWebsiteCount}`;
+    WebsiteCountShower.innerHTML = `عدد الزيارات: ${muslimWebsiteCount}`;
     window.open(muslimWebsiteURL);
 });
 
