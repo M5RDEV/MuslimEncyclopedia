@@ -174,102 +174,7 @@
                 <span aria-hidden="true">&#8592;</span>
             </button>
         </div>
-        <script>
-            const features = [
-                "تسجيلات القرآن الكريم 22 قارئ للنسخة الأوفلاين و 27 للنسخة (الأونلاين)",
-                "16 طابعة للمصاحف [طباعة المدينة - مصر - تونس - الأردية]",
-                "الوضوء و الصلاة و سنن مهجوره و أخطأ شائعة فيهما",
-                "الأذان [جاري العمل على إضافتة قريبا إن شاء الله]",
-                "علامات الساعة مع شرح بسيط لك علامة",
-                "أذكار الصباح و المساء ... إالخ",
-                "أسماء الله الحسنى وشرح معانيها",
-                "العشرة المبشرين بالجنة مع نبذه عنه",
-                "جزء من السيرة النبوية",
-                "مجموعة من الاحاديث",
-                "الإعجاز العلمي في القرآن",
-                "شرح لفضل بعض العبادات",
-                "أدعية من القران الكريم",
-                "نساء عظيمة في الإسلام",
-                "12 فديو تعليمي",
-                "الرقية الشرعية",
-                "لعبة أسئلة دينية",
-                "فرص ذهبيه",
-                "اية وعبرة",
-                "مجاني بالكامل"
-            ];
-            const featuresUl = document.getElementById('features_ul');
-            const featuresMobileControls = document.getElementById('featuresMobileControls');
-            const featuresPrevBtn = document.getElementById('featuresPrev');
-            const featuresNextBtn = document.getElementById('featuresNext');
-            const featuresPageIndicator = document.getElementById('featuresPageIndicator');
-            const featuresMobileMedia = window.matchMedia('(max-width: 768px)');
-            const featuresPerPage = 5;
-            let featuresStartIndex = 0;
 
-            function renderFeatures() {
-                const isMobile = featuresMobileMedia.matches;
-                const maxStartIndex = Math.max(0, features.length - featuresPerPage);
-
-                if (!isMobile) {
-                    featuresStartIndex = 0;
-                } else if (featuresStartIndex > maxStartIndex) {
-                    featuresStartIndex = maxStartIndex;
-                }
-
-                const visibleFeatures = isMobile
-                    ? features.slice(featuresStartIndex, featuresStartIndex + featuresPerPage)
-                    : features;
-
-                featuresUl.innerHTML = '';
-
-                visibleFeatures.forEach((feature) => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `
-            <p>
-                ${feature}
-                <span>
-                    <img src="./image/check.png" alt="check">
-                </span>
-            </p>
-        `;
-                    featuresUl.appendChild(li);
-                });
-
-                if (featuresMobileControls) {
-                    featuresMobileControls.hidden = !isMobile;
-                }
-
-                if (isMobile && featuresPrevBtn && featuresNextBtn && featuresPageIndicator) {
-                    const currentPage = Math.floor(featuresStartIndex / featuresPerPage) + 1;
-                    const totalPages = Math.ceil(features.length / featuresPerPage);
-
-                    featuresPrevBtn.disabled = featuresStartIndex === 0;
-                    featuresNextBtn.disabled = featuresStartIndex >= maxStartIndex;
-                    featuresPageIndicator.textContent = `${currentPage} / ${totalPages}`;
-                }
-            }
-
-            if (featuresPrevBtn && featuresNextBtn) {
-                featuresPrevBtn.addEventListener('click', () => {
-                    featuresStartIndex = Math.max(0, featuresStartIndex - featuresPerPage);
-                    renderFeatures();
-                });
-
-                featuresNextBtn.addEventListener('click', () => {
-                    const maxStartIndex = Math.max(0, features.length - featuresPerPage);
-                    featuresStartIndex = Math.min(maxStartIndex, featuresStartIndex + featuresPerPage);
-                    renderFeatures();
-                });
-            }
-
-            if (typeof featuresMobileMedia.addEventListener === 'function') {
-                featuresMobileMedia.addEventListener('change', renderFeatures);
-            } else if (typeof featuresMobileMedia.addListener === 'function') {
-                featuresMobileMedia.addListener(renderFeatures);
-            }
-
-            renderFeatures();
-        </script>
 
         <div class="line">
             <h2 id="screenshot_desktop_title">
@@ -281,23 +186,7 @@
 
         <ul id="image-list" class="screenshot desktop"></ul>
 
-        <script>
-            const listContainer = document.getElementById("image-list");
-            for (let i = 1; i <= 67; i++) {
-                const listItem = document.createElement("li");
-                const img = document.createElement("img");
-                img.src = `./image/desktop/${i}.png`;
-                img.alt = `screenshot desktop ${i}`;
-                listItem.appendChild(img);
 
-                if (i >= 3) {
-                    img.loading = "lazy";
-                    img.fetchpriority = "low";
-                }
-
-                listContainer.appendChild(listItem);
-            }
-        </script>
 
         <div class="line">
             <h2 id="screenshot_desktop_title">
@@ -309,23 +198,7 @@
 
         <ul class="screenshot desktop" id="screenshot-list"></ul>
 
-        <script>
-            const screenshotList = document.getElementById("screenshot-list");
-            for (let i = 1; i <= 27; i++) {
-                const listItem = document.createElement("li");
-                const img = document.createElement("img");
-                img.src = `./image/desktop/lite version/${i}.png`;
-                img.alt = "screenshot desktop";
-                listItem.appendChild(img);
 
-                if (i >= 3) {
-                    img.loading = "lazy";
-                    img.fetchpriority = "low";
-                }
-
-                screenshotList.appendChild(listItem);
-            }
-        </script>
 
         <div class="line">
             <h2 id="download_title">
@@ -480,3 +353,4 @@
 </body>
 
 </html>
+
