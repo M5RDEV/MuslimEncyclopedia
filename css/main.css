@@ -913,6 +913,15 @@ img {
 
     .site-title {
         font-size: 15px;
+        line-height: 1.25;
+    }
+
+    .site-subtitle {
+        display: block;
+        margin: 0;
+        font-size: 10px;
+        line-height: 1.4;
+        color: #5f6b82;
     }
 
     .social-links a {
@@ -1030,6 +1039,10 @@ body.menu-open {
     }
 
     .site-brand > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2px;
         min-width: 0;
     }
 
@@ -1047,7 +1060,12 @@ body.menu-open {
     }
 
     .site-subtitle {
-        display: none;
+        display: block;
+        margin: 0;
+        font-size: 11px;
+        line-height: 1.45;
+        color: #5f6b82;
+        white-space: normal;
     }
 
     .right-actions {
@@ -1461,6 +1479,15 @@ body.menu-open {
 
     .site-title {
         font-size: 15px;
+        line-height: 1.25;
+    }
+
+    .site-subtitle {
+        display: block;
+        margin: 0;
+        font-size: 10px;
+        line-height: 1.4;
+        color: #5f6b82;
     }
 
     .header-menu-btn {
@@ -2057,3 +2084,4 @@ body.menu-open {
         display: none;
     }
 }
+
