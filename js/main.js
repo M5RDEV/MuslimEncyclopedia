@@ -1,4 +1,192 @@
-﻿const DOWNLOAD_LINKS = {
+﻿const FEATURES = [
+    "تسجيلات القرآن الكريم 22 قارئ للنسخة الأوفلاين و 27 للنسخة (الأونلاين)",
+    "16 طابعة للمصاحف [طباعة المدينة - مصر - تونس - الأردية]",
+    "الوضوء و الصلاة و سنن مهجوره و أخطأ شائعة فيهما",
+    "الأذان [جاري العمل على إضافتة قريبا إن شاء الله]",
+    "علامات الساعة مع شرح بسيط لك علامة",
+    "أذكار الصباح و المساء ... إالخ",
+    "أسماء الله الحسنى وشرح معانيها",
+    "العشرة المبشرين بالجنة مع نبذه عنه",
+    "جزء من السيرة النبوية",
+    "مجموعة من الاحاديث",
+    "الإعجاز العلمي في القرآن",
+    "شرح لفضل بعض العبادات",
+    "أدعية من القران الكريم",
+    "نساء عظيمة في الإسلام",
+    "12 فديو تعليمي",
+    "الرقية الشرعية",
+    "لعبة أسئلة دينية",
+    "فرص ذهبيه",
+    "اية وعبرة",
+    "مجاني بالكامل"
+];
+
+const FEATURES_PER_PAGE = 5;
+let featuresStartIndex = 0;
+
+function createFeatureItem(feature) {
+    const li = document.createElement("li");
+    li.innerHTML = `
+            <p>
+                ${feature}
+                <span>
+                    <img src="./image/check.png" alt="check">
+                </span>
+            </p>
+        `;
+    return li;
+}
+
+function initFeaturesSection() {
+    const featuresUl = document.getElementById("features_ul");
+    const featuresMobileControls = document.getElementById("featuresMobileControls");
+    const featuresPrevBtn = document.getElementById("featuresPrev");
+    const featuresNextBtn = document.getElementById("featuresNext");
+    const featuresPageIndicator = document.getElementById("featuresPageIndicator");
+
+    if (!featuresUl) {
+        return;
+    }
+
+    const featuresMobileMedia = window.matchMedia("(max-width: 768px)");
+
+    const renderFeatures = () => {
+        const isMobile = featuresMobileMedia.matches;
+        const maxStartIndex = Math.max(0, FEATURES.length - FEATURES_PER_PAGE);
+
+        if (!isMobile) {
+            featuresStartIndex = 0;
+        } else if (featuresStartIndex > maxStartIndex) {
+            featuresStartIndex = maxStartIndex;
+        }
+
+        const visibleFeatures = isMobile
+            ? FEATURES.slice(featuresStartIndex, featuresStartIndex + FEATURES_PER_PAGE)
+            : FEATURES;
+
+        featuresUl.innerHTML = "";
+        visibleFeatures.forEach((feature) => {
+            featuresUl.appendChild(createFeatureItem(feature));
+        });
+
+        if (featuresMobileControls) {
+            featuresMobileControls.hidden = !isMobile;
+        }
+
+        if (isMobile && featuresPrevBtn && featuresNextBtn && featuresPageIndicator) {
+            const currentPage = Math.floor(featuresStartIndex / FEATURES_PER_PAGE) + 1;
+            const totalPages = Math.ceil(FEATURES.length / FEATURES_PER_PAGE);
+
+            featuresPrevBtn.disabled = featuresStartIndex === 0;
+            featuresNextBtn.disabled = featuresStartIndex >= maxStartIndex;
+            featuresPageIndicator.textContent = `${currentPage} / ${totalPages}`;
+        }
+    };
+
+    if (featuresPrevBtn && featuresNextBtn) {
+        featuresPrevBtn.addEventListener("click", () => {
+            featuresStartIndex = Math.max(0, featuresStartIndex - FEATURES_PER_PAGE);
+            renderFeatures();
+        });
+
+        featuresNextBtn.addEventListener("click", () => {
+            const maxStartIndex = Math.max(0, FEATURES.length - FEATURES_PER_PAGE);
+            featuresStartIndex = Math.min(maxStartIndex, featuresStartIndex + FEATURES_PER_PAGE);
+            renderFeatures();
+        });
+    }
+
+    if (typeof featuresMobileMedia.addEventListener === "function") {
+        featuresMobileMedia.addEventListener("change", renderFeatures);
+    } else if (typeof featuresMobileMedia.addListener === "function") {
+        featuresMobileMedia.addListener(renderFeatures);
+    }
+
+    renderFeatures();
+}
+
+
+function imageExists(src) {
+    return new Promise((resolve) => {
+        const img = new Image();
+
+        img.onload = () => resolve(true);
+        img.onerror = () => resolve(false);
+        img.src = src;
+    });
+}
+
+async function appendSequentialScreenshotItems(containerId, options) {
+    const {
+        basePath,
+        altPrefix,
+        maxImagesToCheck,
+        maxConsecutiveMissing
+    } = options;
+
+    const container = document.getElementById(containerId);
+
+    if (!container) {
+        return;
+    }
+
+    container.innerHTML = "";
+
+    let consecutiveMissing = 0;
+    let hasFoundAnyImage = false;
+
+    for (let i = 1; i <= maxImagesToCheck; i++) {
+        const src = `${basePath}/${i}.png`;
+        const exists = await imageExists(src);
+
+        if (!exists) {
+            consecutiveMissing += 1;
+
+            if (hasFoundAnyImage && consecutiveMissing >= maxConsecutiveMissing) {
+                break;
+            }
+
+            continue;
+        }
+
+        hasFoundAnyImage = true;
+        consecutiveMissing = 0;
+
+        const listItem = document.createElement("li");
+        const img = document.createElement("img");
+
+        img.src = src;
+        img.alt = `${altPrefix} ${i}`;
+
+        if (i >= 3) {
+            img.loading = "lazy";
+            img.fetchpriority = "low";
+        }
+
+        listItem.appendChild(img);
+        container.appendChild(listItem);
+    }
+}
+
+function initScreenshotSections() {
+    appendSequentialScreenshotItems("image-list", {
+        basePath: "./image/desktop",
+        altPrefix: "screenshot desktop",
+        maxImagesToCheck: 150,
+        maxConsecutiveMissing: 15
+    });
+
+    appendSequentialScreenshotItems("screenshot-list", {
+        basePath: "./image/desktop/lite version",
+        altPrefix: "screenshot lite",
+        maxImagesToCheck: 60,
+        maxConsecutiveMissing: 10
+    });
+}
+
+initFeaturesSection();
+initScreenshotSections();
+const DOWNLOAD_LINKS = {
     fullofflineCount: "https://www.mediafire.com/file/orhjvbyzbpb3sap/موسوعة+المسلم.rar/file",
     offlineCount: "https://www.mediafire.com/file/orhjvbyzbpb3sap/موسوعة+المسلم.rar/file",
     onlineCount: "https://www.mediafire.com/file/4fepk1fo2qjts8t/MuslimEncyclopedia_Lite.rar",
@@ -280,3 +468,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+
+
