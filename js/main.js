@@ -327,7 +327,10 @@ Object.entries(LINK_ELEMENTS).forEach(([counterKey, linkElement]) => {
     }
 
     linkElement.addEventListener("click", () => {
-        incrementCounter(counterKey);
+        // لا نزيد websiteCount هنا - سيتم إضافته من داخل الموقع عند كل زيارة
+        if (counterKey !== "websiteCount") {
+            incrementCounter(counterKey);
+        }
     });
 });
 
