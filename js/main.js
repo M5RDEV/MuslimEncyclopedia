@@ -190,28 +190,32 @@ const DOWNLOAD_LINKS = {
     fullofflineCount: "https://www.mediafire.com/file/orhjvbyzbpb3sap/موسوعة+المسلم.rar/file",
     offlineCount: "https://www.mediafire.com/file/orhjvbyzbpb3sap/موسوعة+المسلم.rar/file",
     onlineCount: "https://www.mediafire.com/file/4fepk1fo2qjts8t/MuslimEncyclopedia_Lite.rar",
-    websiteCount: "https://m5rdev.github.io/MuslimEncyclopedia-online/"
+    websiteCount: "https://m5rdev.github.io/MuslimEncyclopedia-online/",
+    androidCount: "https://play.google.com/store/apps/details?id=com.m5rdev.muslimencyclopedia"
 };
 
 const COUNTER_LABELS = {
     fullofflineCount: "عدد التحميلات",
     offlineCount: "عدد التحميلات",
     onlineCount: "عدد التحميلات",
-    websiteCount: "عدد الزيارات"
+    websiteCount: "عدد الزيارات",
+    androidCount: "عدد التحميلات"
 };
 
 const LINK_ELEMENTS = {
     fullofflineCount: document.getElementById("full-offline-download"),
     offlineCount: document.getElementById("offline-download"),
     onlineCount: document.getElementById("online-download"),
-    websiteCount: document.getElementById("muslimEncy-website")
+    websiteCount: document.getElementById("muslimEncy-website"),
+    androidCount: document.getElementById("android-version")
 };
 
 const COUNTER_ELEMENTS = {
     fullofflineCount: document.getElementById("fullofflineCountShower"),
     offlineCount: document.getElementById("offlineCountShower"),
     onlineCount: document.getElementById("onlineCountShower"),
-    websiteCount: document.getElementById("websiteCountShower")
+    websiteCount: document.getElementById("websiteCountShower"),
+    websiteCount: document.getElementById("androidCountShower")
 };
 
 function setCounterMessage(counterKey, message) {
