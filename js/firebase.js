@@ -20,6 +20,9 @@ window.MUSLIM_ENCYCLOPEDIA_FIREBASE = {
         },
         websiteCount: {
             endpoint: "Website"
+        },
+        androidCount: {
+            endpoint: "Android"
         }
     }
 };
