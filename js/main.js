@@ -198,8 +198,8 @@ const COUNTER_LABELS = {
     fullofflineCount: "عدد التحميلات",
     offlineCount: "عدد التحميلات",
     onlineCount: "عدد التحميلات",
-    websiteCount: "عدد الزيارات",
-    androidCount: "عدد التحميلات"
+    androidCount: "عدد التحميلات",
+    websiteCount: "عدد الزيارات"
 };
 
 const LINK_ELEMENTS = {
@@ -215,7 +215,7 @@ const COUNTER_ELEMENTS = {
     offlineCount: document.getElementById("offlineCountShower"),
     onlineCount: document.getElementById("onlineCountShower"),
     websiteCount: document.getElementById("websiteCountShower"),
-    websiteCount: document.getElementById("androidCountShower")
+    androidCount: document.getElementById("androidCountShower")
 };
 
 function setCounterMessage(counterKey, message) {

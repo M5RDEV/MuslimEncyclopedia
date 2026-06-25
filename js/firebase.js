@@ -18,11 +18,11 @@ window.MUSLIM_ENCYCLOPEDIA_FIREBASE = {
         onlineCount: {
             endpoint: "Online"
         },
-        websiteCount: {
-            endpoint: "Website"
-        },
         androidCount: {
             endpoint: "Android"
+        },
+        websiteCount: {
+            endpoint: "Website"
         }
     }
 };
